@@ -30,14 +30,12 @@ function getRandomMtbImage() {
   return mtbImages[index];
 }
 
-// Se non c'è productId, imposta immagine di default casuale
 if (!productId) {
   const randomImage = getRandomMtbImage();
   imageUrlField.value = randomImage;
   previewImg.src = randomImage;
 }
 
-// Se esiste un ID, carica i dati del prodotto per la modifica
 if (productId) {
   fetch(endpoint + productId, { headers })
     .then((res) => {
@@ -59,7 +57,6 @@ if (productId) {
     });
 }
 
-// Funzione per aggiornare immagine, prezzo e descrizione in base al nome
 function updatePreviewAndFields() {
   const name = nameInput.value.trim();
 
